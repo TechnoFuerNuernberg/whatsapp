@@ -1,61 +1,51 @@
 <html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
 
-  <body style="text-align:center; background-color:white">
-    <strong
-      >Registriere dich jetzt für den Techno für Nürnberg - Whatsapp
-      Newsletter!<br /><br /><br
-    /></strong>
+  <body>
+    <div id="container">
+      <h2>
+        Registriere dich jetzt für den <br />Techno für Nürnberg - Whatsapp
+        Newsletter!
+      </h2>
+      <p>
+        Erhalte jetzt alle Partydates, Szene-News, Gewinnspiele etc. auf direkt
+        und bequem auf dein Smartphone
+      </p>
 
-    Erhalte jetzt alle Partydates, Szene-News, Gewinnspiele etc. auf direkt und
-    bequem auf dein Smartphone<br />
+      <p>Worauf wartest du noch?</p>
 
-    Worauf wartest du noch? <br /><br /><br /><br /><br /><br /><br /><br />
-
-    <style type="text/css">
-      .button {
-        display: inline-block;
-        margin: 0;
-        padding: 0.75rem 1rem;
-        border: 0;
-        border-radius: 0.317rem;
-        background-color: #aaa;
-        color: #fff;
-        text-decoration: none;
-        font-weight: 700;
-        font-size: 1rem;
-        line-height: 1.5;
-        font-family: "Helvetica Neue", Arial, sans-serif;
-        -webkit-appearance: none;
-        -webkit-font-smoothing: antialiased;
-      }
-
-      .button:hover {
-        opacity: 0.85;
-      }
-
-      .button:active {
-        box-shadow: inset 0 3px 4px hsla(0, 0%, 0%, 0.2);
-      }
-
-      .button:disabled {
-        opacity: 0.2;
-      }
-
-      .button:focus {
-        outline: thin dotted #444;
-
-        outline: 5px auto -webkit-focus-ring-color;
-
-        outline-offset: -2px;
-      }
-
-      #buttonWrapper {
-        text-align: center;
-      }
-    </style>
+      <div id="buttonWrapper">
+        <input
+          type="checkbox"
+          name="agreeGdpr"
+          id="box1"
+          onclick="toggleButtonActive()"
+          value="check"
+        />
+        Ich stimme der
+        <a href="datenschutz.html" target="_blank">Datenschutzerklärung </a
+        >zu<br />
+        <button
+          class="button"
+          onclick="toggleNumberVisibility()"
+          id="button1"
+          disabled
+        >
+          Jetzt für den Newsletter registrieren!
+        </button>
+      </div>
+      <div id="hiddenNumber">
+        <span id="numberOnly"></span>
+        <p>
+          <br />Um Dich anzumelden: <br /><br />
+          1.) Speichere die Nummer als Kontakt in dein Smartphone <br />
+          2.) Sende uns die Nachricht <b>'Start'</b> über WhatsApp!
+        </p>
+      </div>
+    </div>
 
     <script type="text/javascript">
       function getDecodedNumber() {
@@ -63,25 +53,22 @@
           48,
           49,
           55,
-          49,
+          54,
           32,
-          53,
-          52,
           54,
+          57,
+          50,
+          57,
+          55,
           54,
-          52,
-          53,
-          52,
-          56,
-          57
+          49,
+          50
         );
       }
 
       function toggleNumberVisibility() {
         var numberWrapper = document.getElementById("hiddenNumber");
-
         var numberOnly = document.getElementById("numberOnly");
-
         var decodedNumber = getDecodedNumber();
 
         numberOnly.innerHTML =
@@ -91,7 +78,9 @@
           decodedNumber +
           "</a>";
 
-        if (numberWrapper.style.visibility === "hidden") {
+        var computedStyle = window.getComputedStyle(numberWrapper);
+
+        if (computedStyle.visibility == "hidden") {
           numberWrapper.style.visibility = "visible";
         } else {
           numberWrapper.style.visibility = "hidden";
@@ -99,59 +88,17 @@
       }
 
       function toggleButtonActive() {
-        console.log("ButtonActive");
-
         var button = document.getElementById("button1");
-
         var box = document.getElementById("box1");
 
         if (box.checked) {
           button.disabled = false;
-
           button.style.cursor = "pointer";
         } else {
           button.disabled = true;
-
           button.style.cursor = "default";
         }
       }
     </script>
-
-    <div id="buttonWrapper">
-      <input
-        type="checkbox"
-        name="agreeGdpr"
-        id="box1"
-        onclick="toggleButtonActive()"
-        value="check"
-      />
-      Ich stimme der
-      <a href="https://www.jedentageinset.de/?p=15387" target="_blank"
-        >Datenschutzerklärung </a
-      >zu<br />
-      <button
-        class="button"
-        onclick="toggleNumberVisibility()"
-        id="button1"
-        disabled
-      >
-        Jetzt für den Newsletter registrieren!
-      </button>
-
-      <div
-        id="hiddenNumber"
-        style="visibility: hidden; font-size: 2em; font-weight: bold;"
-      >
-        <span id="numberOnly"></span>
-
-        <p>
-          <br />Um Dich anzumelden: <br /><br />
-
-          1.) Speichere die Nummer als Kontakt in dein Smartphone <br />
-
-          2.) Sende uns die Nachricht <b>'Start'</b> über WhatsApp!
-        </p>
-      </div>
-    </div>
   </body>
 </html>
