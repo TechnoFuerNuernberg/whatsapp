@@ -1,0 +1,157 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  </head>
+
+  <body style="text-align:center; background-color:white">
+    <strong
+      >Registriere dich jetzt für den Techno für Nürnberg - Whatsapp
+      Newsletter!<br /><br /><br
+    /></strong>
+
+    Erhalte jetzt alle Partydates, Szene-News, Gewinnspiele etc. auf direkt und
+    bequem auf dein Smartphone<br />
+
+    Worauf wartest du noch? <br /><br /><br /><br /><br /><br /><br /><br />
+
+    <style type="text/css">
+      .button {
+        display: inline-block;
+        margin: 0;
+        padding: 0.75rem 1rem;
+        border: 0;
+        border-radius: 0.317rem;
+        background-color: #aaa;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1rem;
+        line-height: 1.5;
+        font-family: "Helvetica Neue", Arial, sans-serif;
+        -webkit-appearance: none;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .button:hover {
+        opacity: 0.85;
+      }
+
+      .button:active {
+        box-shadow: inset 0 3px 4px hsla(0, 0%, 0%, 0.2);
+      }
+
+      .button:disabled {
+        opacity: 0.2;
+      }
+
+      .button:focus {
+        outline: thin dotted #444;
+
+        outline: 5px auto -webkit-focus-ring-color;
+
+        outline-offset: -2px;
+      }
+
+      #buttonWrapper {
+        text-align: center;
+      }
+    </style>
+
+    <script type="text/javascript">
+      function getDecodedNumber() {
+        return String.fromCharCode(
+          48,
+          49,
+          55,
+          49,
+          32,
+          53,
+          52,
+          54,
+          54,
+          52,
+          53,
+          52,
+          56,
+          57
+        );
+      }
+
+      function toggleNumberVisibility() {
+        var numberWrapper = document.getElementById("hiddenNumber");
+
+        var numberOnly = document.getElementById("numberOnly");
+
+        var decodedNumber = getDecodedNumber();
+
+        numberOnly.innerHTML =
+          '<a href="tel:' +
+          decodedNumber +
+          '" target="_blank">' +
+          decodedNumber +
+          "</a>";
+
+        if (numberWrapper.style.visibility === "hidden") {
+          numberWrapper.style.visibility = "visible";
+        } else {
+          numberWrapper.style.visibility = "hidden";
+        }
+      }
+
+      function toggleButtonActive() {
+        console.log("ButtonActive");
+
+        var button = document.getElementById("button1");
+
+        var box = document.getElementById("box1");
+
+        if (box.checked) {
+          button.disabled = false;
+
+          button.style.cursor = "pointer";
+        } else {
+          button.disabled = true;
+
+          button.style.cursor = "default";
+        }
+      }
+    </script>
+
+    <div id="buttonWrapper">
+      <input
+        type="checkbox"
+        name="agreeGdpr"
+        id="box1"
+        onclick="toggleButtonActive()"
+        value="check"
+      />
+      Ich stimme der
+      <a href="https://www.jedentageinset.de/?p=15387" target="_blank"
+        >Datenschutzerklärung </a
+      >zu<br />
+      <button
+        class="button"
+        onclick="toggleNumberVisibility()"
+        id="button1"
+        disabled
+      >
+        Jetzt für den Newsletter registrieren!
+      </button>
+
+      <div
+        id="hiddenNumber"
+        style="visibility: hidden; font-size: 2em; font-weight: bold;"
+      >
+        <span id="numberOnly"></span>
+
+        <p>
+          <br />Um Dich anzumelden: <br /><br />
+
+          1.) Speichere die Nummer als Kontakt in dein Smartphone <br />
+
+          2.) Sende uns die Nachricht <b>'Start'</b> über WhatsApp!
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
