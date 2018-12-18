@@ -4,20 +4,23 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
     <title>Techno Fuer Nuernberg – WhatsApp Newsletter</title>
   </head>
-
+ 
   <body>
-    <div id="container">
-      <h2>
+    <div id="container" ><br><br>
+      <h1>
         Registriere dich jetzt für den <br />Techno für Nürnberg - Whatsapp
         Newsletter!
-      </h2>
+      </h1>
       <p>
+                        <br>
         Erhalte jetzt alle Partydates, Szene-News, Gewinnspiele etc. auf direkt
         und bequem auf dein Smartphone
       </p>
-
-      <p>Worauf wartest du noch?</p>
-
+                        <br>
+                        <br>
+      <p><b>Über 100 Personen haben sich schon registriert! Worauf wartest du noch?</b></p>
+              <p>Wichtiger Hinweis: Die Dates kommen als direkte WhatsApp-Nachricht auf dein Smartphone. Es handelt sich nicht um eine Chatgruppe. Niemand sieht deine Nummer und sie wird nicht weitergegeben!</p>
+ 
       <div id="buttonWrapper">
         <input
           type="checkbox"
@@ -47,7 +50,7 @@
         </p>
       </div>
     </div>
-
+ 
     <script type="text/javascript">
       function getDecodedNumber() {
         return String.fromCharCode(
@@ -66,32 +69,32 @@
           50
         );
       }
-
+ 
       function toggleNumberVisibility() {
         var numberWrapper = document.getElementById("hiddenNumber");
         var numberOnly = document.getElementById("numberOnly");
         var decodedNumber = getDecodedNumber();
-
+ 
         numberOnly.innerHTML =
           '<a href="tel:' +
           decodedNumber +
           '" target="_blank">' +
           decodedNumber +
           "</a>";
-
+ 
         var computedStyle = window.getComputedStyle(numberWrapper);
-
+ 
         if (computedStyle.visibility == "hidden") {
           numberWrapper.style.visibility = "visible";
         } else {
           numberWrapper.style.visibility = "hidden";
         }
       }
-
+ 
       function toggleButtonActive() {
         var button = document.getElementById("button1");
         var box = document.getElementById("box1");
-
+ 
         if (box.checked) {
           button.disabled = false;
           button.style.cursor = "pointer";
@@ -103,3 +106,4 @@
     </script>
   </body>
 </html>
+ 
